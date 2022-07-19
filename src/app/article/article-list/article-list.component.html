@@ -1,0 +1,21 @@
+<h2>Articles</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Content</th>
+			<th>Created Date</th>
+			<th>CreatedBy</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor = "let article of articles">
+			<td>{{article.id}}</td>
+			<td>{{article.title}}</td>
+			<td>{{article.content}}</td>
+			<td>{{article.createdDate}}</td>
+			<td>{{article.userId}}</td>
+		</tr>
+	</tbody>
+</table>
