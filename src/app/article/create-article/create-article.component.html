@@ -1,0 +1,25 @@
+<div class="col-md-6 offset-md-3">
+<h3>Create Article</h3>
+<form (ngSubmit) = "onSubmit()">
+	<div class="form-group">
+		<label>Title</label>
+		<input type="text" class="form-control" id="title" 
+		[(ngModel)] = "article.title" name="title">
+	</div>
+
+	<div class="form-group">
+		<label>Content</label>
+		<input type="text" class="form-control" id="content" 
+		[(ngModel)] = "article.content" name="content">
+	</div>
+
+	<!--in future will be automate-->
+	<div class="form-group">
+		<label>UserId</label>
+		<input type="text" class="form-control" id="userId" 
+		[(ngModel)] = "article.userId" name="content">
+	</div> 
+
+	<button class="btn btn-success" type="submit">Submit</button>
+</form>
+</div>

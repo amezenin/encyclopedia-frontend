@@ -15,4 +15,8 @@ export class ArticleService {
   getArticleList(): Observable<Article[]>{
     return this.httpClient.get<Article[]>(`${this.baseUrl}`);
   }
+
+  createArcticle(article: Article): Observable<any>{
+    return this.httpClient.post(`${this.baseUrl}`, article);
+  }
 }

@@ -7,3 +7,13 @@ export interface Article {
 	commentList: string[];
 
 }
+
+const article: any = {
+	id: '1',
+	title: 'test',
+	content: "test",
+	createdDate: "2022",
+	userId: "1", 
+	
+}
+
