@@ -20,6 +20,7 @@ export class CreateArticleComponent implements OnInit {
   saveArticle(){
     this.articleService.createArcticle(this.article).subscribe( data => {
       console.log(data);
+      this.goToArticleList();
     },
   error => console.log(error));
   }

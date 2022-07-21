@@ -1,0 +1,17 @@
+<div class="col-md-6 offset-md-3">
+	<h3>Update Article</h3>
+	<form (ngSubmit) = "onSubmit()">
+		<div class="form-group">
+			<label>Title</label>
+			<input type="text" class="form-control" id="title" 
+			[(ngModel)] = "article.title" name="title">
+		</div>
+		
+		<div class="form-group">
+			<label>Content</label>
+			<input type="text" class="form-control" id="content" 
+			[(ngModel)] = "article.content" name="content">
+		</div>
+		<button class="btn btn-success" type="submit">Submit</button>
+	</form>
+</div>

@@ -9,7 +9,7 @@ import { Article } from './article';
 })
 export class ArticleService {
 
-  private baseUrl = "http://localhost:8080/api/articles/all";
+  private baseUrl = "http://localhost:8080/api/articles";
   constructor(private httpClient: HttpClient) { }
 
   getArticleList(): Observable<Article[]>{
@@ -19,4 +19,13 @@ export class ArticleService {
   createArcticle(article: Article): Observable<any>{
     return this.httpClient.post(`${this.baseUrl}`, article);
   }
+
+  getArticleById(id: number): Observable<Article>{
+    return this.httpClient.get<Article>(`${this.baseUrl}/${id}`)
+  }
+
+  updateArticle(id: number, article: Article): Observable<any>{
+    return this.httpClient.patch(`${this.baseUrl}/${id}`, article)
+  }
+
 }
