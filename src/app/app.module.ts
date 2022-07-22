@@ -11,6 +11,12 @@ import { ArticleDetailsComponent } from './article/article-details/article-detai
 import { CommentListComponent } from './comment/comment-list/comment-list.component';
 import { CommentUpdateComponent } from './comment/comment-update/comment-update.component';
 import { CommentCreateComponent } from './comment/comment-create/comment-create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './security/login/login.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { RegisterComponent } from './security/register/register.component';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -22,13 +28,19 @@ import { CommentCreateComponent } from './comment/comment-create/comment-create.
     ArticleDetailsComponent,
     CommentListComponent,
     CommentUpdateComponent,
-    CommentCreateComponent
+    CommentCreateComponent,
+    LoginComponent,
+    UserListComponent,
+    RegisterComponent,
+    UserDetailsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@ export class ArticleService {
   constructor(private httpClient: HttpClient) { }
 
   getArticleList(): Observable<Article[]>{
-    return this.httpClient.get<Article[]>(`${this.baseUrl}`);
+    return this.httpClient.get<Article[]>(this.baseUrl);
   }
 
   createArcticle(article: Article): Observable<any>{
@@ -32,6 +32,6 @@ export class ArticleService {
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 
-  
+
 
 }

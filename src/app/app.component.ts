@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './security/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Encyclopedia Angular + Spring Boot';
+
+  constructor(public authService: AuthService,
+    public router: Router) { }
+  logout() {
+    this.authService.doLogout()
+    this.router.navigate(['login']);
+  }
 }
