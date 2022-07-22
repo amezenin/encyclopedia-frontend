@@ -27,7 +27,14 @@ export class ArticleListComponent implements OnInit {
   }
 
   updateArticle(id: number){
-    this.router.navigate(['update-article', id])
+    this.router.navigate(['update-article', id]);
+  }
+
+  deleteArticle(id: number){
+    this.articleService.deleteArticle(id).subscribe(data => {
+      console.log(data);
+      this.getArticles();
+    });
   }
 
 }

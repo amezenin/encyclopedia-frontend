@@ -21,11 +21,15 @@ export class ArticleService {
   }
 
   getArticleById(id: number): Observable<Article>{
-    return this.httpClient.get<Article>(`${this.baseUrl}/${id}`)
+    return this.httpClient.get<Article>(`${this.baseUrl}/${id}`);
   }
 
   updateArticle(id: number, article: Article): Observable<any>{
-    return this.httpClient.patch(`${this.baseUrl}/${id}`, article)
+    return this.httpClient.patch(`${this.baseUrl}/${id}`, article);
+  }
+
+  deleteArticle(id: number): Observable<any>{
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 
 }
