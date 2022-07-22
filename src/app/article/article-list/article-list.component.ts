@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class ArticleListComponent implements OnInit {
 
   articles: Article[] = [];
-  clonedArticles: { [s: string]: Article; } = {};
 
   constructor(private articleService: ArticleService,
     private router: Router) { }
@@ -35,6 +34,10 @@ export class ArticleListComponent implements OnInit {
       console.log(data);
       this.getArticles();
     });
+  }
+
+  articleDetails(id: number){
+    this.router.navigate(['article-details', id])
   }
 
 }

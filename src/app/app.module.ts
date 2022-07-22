@@ -7,13 +7,22 @@ import { ArticleListComponent } from './article/article-list/article-list.compon
 import { CreateArticleComponent } from './article/create-article/create-article.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateArticleComponent } from './article/update-article/update-article.component';
+import { ArticleDetailsComponent } from './article/article-details/article-details.component';
+import { CommentListComponent } from './comment/comment-list/comment-list.component';
+import { CommentUpdateComponent } from './comment/comment-update/comment-update.component';
+import { CommentCreateComponent } from './comment/comment-create/comment-create.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
     CreateArticleComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    ArticleDetailsComponent,
+    CommentListComponent,
+    CommentUpdateComponent,
+    CommentCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+<h3>View Article Details</h3>
+<div>
+	<div>
+		<label><b>Id: </b></label> {{article.id}}
+	</div>
+	<div>
+		<label><b>Title: </b></label> {{article.title}}
+	</div>
+	<div>
+		<label><b>Content: </b></label> {{article.content}}
+	</div>
+	<div>
+		<label><b>Created Date: </b></label> {{article.createdDate}}
+	</div>
+	<div>
+		<label><b>CreatedBy: </b></label> {{article.userId}}
+	</div>
+	<div >
+		<h3>Article comments</h3>
+			<table class="table table-striped" style="margin-bottom: 100px">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Content</th>
+							<th>Created Date</th>
+							<th>CreatedBy</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor = "let dat of article.commentList ">
+							<td>{{dat.id}}</td>
+							<td>{{dat.content}}</td>
+							<td>{{dat.createdDate}}</td>
+							<td>{{dat.userId}}</td>
+						</tr>
+					</tbody>
+				</table>
+	</div>
+</div>
