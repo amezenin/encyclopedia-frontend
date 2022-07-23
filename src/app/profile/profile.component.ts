@@ -9,8 +9,10 @@ import { TokenStorageService } from '../security/token-storage.service';
 
 
 export class ProfileComponent implements OnInit {
-  //currentUser: any;
   
+  currentUser: any;
+  
+  /*
   currentUser: any = {
     id: '1',
     login: 'test',
@@ -20,13 +22,14 @@ export class ProfileComponent implements OnInit {
         name: 'comment'
       }
     ]
-  }
+  }*/
 
   constructor(private token: TokenStorageService) { }
 
   ngOnInit(): void {
     this.currentUser = this.token.getUser();
-    console.log(this.currentUser);
+    console.log(this.token.getUser());
+    console.log("Roles in profile " + this.token.getUser().roles);
   }
 
   

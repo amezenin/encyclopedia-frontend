@@ -7,6 +7,7 @@ import { ArticleDetailsComponent } from './article/article-details/article-detai
 import { LoginComponent } from './security/login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 
+
 const routes: Routes = [
   {path: 'articles', component: ArticleListComponent},
   {path:'create-article', component: CreateArticleComponent},

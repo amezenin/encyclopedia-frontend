@@ -17,6 +17,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { RegisterComponent } from './security/register/register.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { ProfileComponent } from './profile/profile.component';
+import { authInterceptorProviders } from './security/auth.interceptor';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { ProfileComponent } from './profile/profile.component';
     UserListComponent,
     RegisterComponent,
     UserDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,7 @@ import { ProfileComponent } from './profile/profile.component';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

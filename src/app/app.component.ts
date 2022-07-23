@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './security/auth.service';
 import { Router } from '@angular/router';
+import { TokenStorageService } from './security/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private roles: string[] = [];
+  isLoggedIn = false;
+  isAdmin = false;
+  showModeratorBoard = false;
+  username?: string;
   title = 'Encyclopedia Angular + Spring Boot';
 
-  constructor(public authService: AuthService,
+  constructor(public tokenStorageService: TokenStorageService,
     public router: Router) { }
+    ngOnInit(): void {
+      this.isLoggedIn = !!this.tokenStorageService.getToken();
+      if (this.isLoggedIn) {
+        const user = this.tokenStorageService.getUser();
+        this.roles = user.roles;
+       
+        this.isAdmin = this.roles?.includes('ROLE_ADMIN');
+
+        this.username = user.username;
+        console.log("Data from app.component.ts this roles " + user.roles);
+        console.log("isAdmin " + this.isAdmin );
+    }
+  }
   logout() {
-    this.authService.doLogout()
-    this.router.navigate(['login']);
+    this.tokenStorageService.signOut();
+    this.router.navigate(['/login'])
   }
 }

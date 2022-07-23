@@ -1,2 +1,4 @@
-export class Authentication {
+export interface Authentication {
+	
+	
 }

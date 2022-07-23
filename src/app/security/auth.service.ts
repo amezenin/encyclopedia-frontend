@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Authentication } from './authentication';
 
 const BASE_URL = "http://localhost:8080/api/auth/";
 const httpOptions = {
@@ -12,6 +13,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+
+  authentication: Authentication = {} as Authentication;
   
   constructor(private http: HttpClient) { }
 
@@ -33,8 +36,5 @@ export class AuthService {
     }, httpOptions);
   }
 
-  doLogout() {
-    window.sessionStorage.clear();
-  }
 
 }
