@@ -4,7 +4,7 @@
   *ngIf="!isSuccessful"
   (ngSubmit) = "onSubmit()">
     <div class="form-group">
-      <label>Login</label>
+      <label>Sign Up</label>
       <input type="text" class="form-control" id="login" 
       [(ngModel)] = "user.login" name="login">
     </div>
@@ -33,7 +33,7 @@
       [(ngModel)] = "user.lastName" name="lastName">
     </div> 
   
-    <button class="btn btn-success" type="submit">Sign Up</button>
+    <button class="btn btn-success" type="submit" style="margin-bottom: 100px" >Sign Up</button>
     <div class="alert alert-warning" *ngIf="isSignUpFailed">
       Signup failed!<br />{{ errorMessage }}
     </div>
@@ -41,4 +41,4 @@
   <div class="alert alert-success" *ngIf="isSuccessful">
     Your registration is successful!
   </div>
-  </div>
+</div>

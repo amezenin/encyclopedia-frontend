@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveArticle(){
+  saveUser(){
     this.authService.createUser(this.user).subscribe( data => {
       console.log(data);
       this.isSuccessful = true;
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
   
   onSubmit(){
     console.log(this.user);
-    this.saveArticle();
+    this.saveUser();
   }
 
   /*

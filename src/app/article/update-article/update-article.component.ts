@@ -18,9 +18,12 @@ export class UpdateArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.articleService.getArticleById(this.id).subscribe(data => {
-      this.article = data;
-    }, error => console.log(error));
+    this.articleService.getArticleById(this.id).subscribe({
+      next: data => {
+        this.article = data;
+        }, 
+      error: error => console.log(error)
+    });
   }
 
   onSubmit(){
