@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from '../article';
 import { ArticleService } from '../article.service';
 import { Router } from '@angular/router';
+import { TokenStorageService } from '../../security/token-storage.service';
 
 @Component({
   selector: 'app-create-article',
@@ -12,7 +13,8 @@ export class CreateArticleComponent implements OnInit {
 
   article = {} as Article;
   constructor(private articleService: ArticleService,
-  private router: Router) { }
+  private router: Router,
+  private token: TokenStorageService) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +33,7 @@ export class CreateArticleComponent implements OnInit {
 
   onSubmit(){
     console.log(this.article);
+    this.article.userId = this.token.getUser().id;
     this.saveArticle();
   }
 

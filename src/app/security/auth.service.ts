@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Authentication } from './authentication';
+import { User } from '../user/user';
 
 const BASE_URL = "http://localhost:8080/api/auth/";
 const httpOptions = {
@@ -24,6 +25,11 @@ export class AuthService {
       password
     }, httpOptions);
   }
+
+  createUser(user: User): Observable<any>{
+    return this.http.post(BASE_URL + 'register', user);
+  }
+
 
   register(login: string, password: string, firstName:string,
     lastName: string, email: string): Observable<any> {

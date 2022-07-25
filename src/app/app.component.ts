@@ -12,8 +12,8 @@ export class AppComponent {
   private roles: string[] = [];
   isLoggedIn = false;
   isAdmin = false;
-  showModeratorBoard = false;
-  username?: string;
+  //showModeratorBoard = false;
+  login?: string;
   title = 'Encyclopedia Angular + Spring Boot';
 
   constructor(public tokenStorageService: TokenStorageService,
@@ -23,14 +23,14 @@ export class AppComponent {
       if (this.isLoggedIn) {
         const user = this.tokenStorageService.getUser();
         this.roles = user.roles;
-       
         this.isAdmin = this.roles?.includes('ROLE_ADMIN');
-
-        this.username = user.username;
+        this.login = user.login;
         console.log("Data from app.component.ts this roles " + user.roles);
         console.log("isAdmin " + this.isAdmin );
     }
   }
+
+
   logout() {
     this.tokenStorageService.signOut();
     this.router.navigate(['/login'])

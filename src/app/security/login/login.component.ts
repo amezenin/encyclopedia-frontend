@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
         console.log("Roles in login submit " + data.token.roles);
         console.log("Login in login submit " + this.tokenStorage.getUser().login);
         console.log("Data.token " + data.token);
+        this.reloadPage();
       },
       error: err => {
         this.errorMessage = err.error.message;

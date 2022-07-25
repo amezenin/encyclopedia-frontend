@@ -6,6 +6,8 @@ import { UpdateArticleComponent } from './article/update-article/update-article.
 import { ArticleDetailsComponent } from './article/article-details/article-details.component';
 import { LoginComponent } from './security/login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { RegisterComponent } from './security/register/register.component';
 
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path: 'article-details/:id', component: ArticleDetailsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'register', component:RegisterComponent},
+  {path: 'users', component: UserListComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'} // empty link redirect to articleList
 ];
 
