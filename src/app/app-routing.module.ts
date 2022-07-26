@@ -8,6 +8,7 @@ import { LoginComponent } from './security/login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { RegisterComponent } from './security/register/register.component';
+import { UserUpdateComponent } from './user/user-update/user-update.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'users', component: UserListComponent},
+  {path: 'user-update/:id', component: UserUpdateComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'} // empty link redirect to articleList
 ];
 

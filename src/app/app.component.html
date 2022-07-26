@@ -8,7 +8,7 @@
 		  <a href  class="nav-link" *ngIf="isLoggedIn" routerLink="create-article">Create aricles</a>
 		</li>
 		<li class="nav-item">
-		  <a href class="nav-link" *ngIf="isLoggedIn" routerLink="users">Users</a>
+		  <a href class="nav-link" *ngIf="isAdmin" routerLink="users">Users</a>
 		</li>
 	  </ul>
 	  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">

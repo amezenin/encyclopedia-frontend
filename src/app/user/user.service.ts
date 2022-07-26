@@ -9,8 +9,6 @@ const API_URL = 'http://localhost:8080/api/users/';
 })
 export class UserService {
 
-  user$ = new Subject();
-
   constructor(private http: HttpClient) { }
 
   getUserList(): Observable<User[]>{
@@ -21,11 +19,9 @@ export class UserService {
     return this.http.get<User>(API_URL + `${id}`);
   }
 
-  
-  getUserBoard(): Observable<any> {
-    return this.http.get(API_URL + 'user', { responseType: 'text' });
+  updateUser(id: number, user: User): Observable<any>{
+    return this.http.patch(API_URL +`${id}`, user);
   }
-  getAdminBoard(): Observable<any> {
-    return this.http.get(API_URL + 'admin', { responseType: 'text' });
-  }
+
+
 }

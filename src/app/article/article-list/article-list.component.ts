@@ -16,7 +16,7 @@ export class ArticleListComponent implements OnInit {
   articles: Article[] = [];
   users:User[] = [];
   isOwner = false;
-  login?:string;
+  //login?:string;
 
   constructor(private articleService: ArticleService,
     private router: Router,
@@ -26,10 +26,13 @@ export class ArticleListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticles();
+    //i think it is not best way for printing login by userId
     this.getUsers();
+    
 
   }
-
+  
+  //i think it is not best way for printing login by userId
   getUsers() {
     this.userService.getUserList().subscribe({
       next: data => {
@@ -39,17 +42,16 @@ export class ArticleListComponent implements OnInit {
     });
   }
 
+  //i think it is not best way for printing login by userId
   getUserLoginById(id: number) {
     const user =  this.users.find((user) => user.id === id)
     if (!user) {
       // we not found the parent
       return ''
     }
-    console.log(user.login);
+    //console.log(user.login);
     return user.login
   }
-
-  
 
   private getArticles(){
     this.articleService.getArticleList().subscribe({
@@ -63,8 +65,10 @@ export class ArticleListComponent implements OnInit {
   updateArticle(id: number, userId: number){
     if(userId == this.token.getUser().id || this.token.getUser().roles.includes("ROLE_ADMIN") == true ){
       this.router.navigate(['update-article', id]);
+    } else {
+      alert("Only owner can edit article!");
     }
-    console.log("article did not create by user");
+    console.log("article did not create by user");  
   }
 
   deleteArticle(id: number, userId:number){
@@ -73,6 +77,8 @@ export class ArticleListComponent implements OnInit {
         console.log(data);
         this.getArticles();
       });
+    } else {
+      alert("Only owner can delete article!");
     }
     console.log("article did not create by user");
   }
