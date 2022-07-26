@@ -36,4 +36,5 @@ export class UpdateArticleComponent implements OnInit {
     this.router.navigate(['/articles']);
   }
 
+
 }

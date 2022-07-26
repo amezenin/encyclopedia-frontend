@@ -53,7 +53,7 @@ export class ArticleListComponent implements OnInit {
     return user.login
   }
 
-  private getArticles(){
+  getArticles(){
     this.articleService.getArticleList().subscribe({
       next: data => {
         this.articles = data;
@@ -85,6 +85,15 @@ export class ArticleListComponent implements OnInit {
 
   articleDetails(id: number){
     this.router.navigate(['article-details', id])
+  }
+
+  getArticleListByOwner(){
+    this.articleService.getArticleListByOwner().subscribe({
+      next: data => {
+        this.articles = data;
+        }, 
+      error: error => console.log(error)
+    });
   }
 
 

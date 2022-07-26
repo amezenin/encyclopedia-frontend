@@ -2,9 +2,11 @@
 	<h3>Update User</h3>
 	<form (ngSubmit) = "onSubmit()">
 		<div class="form-group">
-				<label>Active</label>
-				<input type="text" class="form-control" id="title" 
-				[(ngModel)] = "user.active" name="active">
+			<label>Active</label>
+			<select [(ngModel)]="user.active" name="active" id="active" class="form-control">
+				<option value="false">false</option>
+				<option value="true">true</option>
+			</select>
 		</div>
 		<button class="btn btn-success" type="submit">Submit</button>
 	</form>

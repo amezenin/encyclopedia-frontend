@@ -1,4 +1,11 @@
-<h2>Articles</h2>
+<h2>Articles</h2> 
+<button (click) = "getArticles()"  class="btn btn-primary" id="articleTopButtons">
+		Show all articles
+</button>
+<button (click) = "getArticleListByOwner()"  class="btn btn-primary" id="articleTopButtons">
+		Show only my articles
+</button>
+
 <div class="wrapper">
 <table class="table table-striped" >
 	<thead>

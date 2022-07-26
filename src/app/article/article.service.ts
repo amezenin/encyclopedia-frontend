@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Article } from './article';
+import { TokenStorageService } from '../security/token-storage.service';
 
 
 @Injectable({
@@ -10,10 +11,21 @@ import { Article } from './article';
 export class ArticleService {
 
   private baseUrl = "http://localhost:8080/api/articles";
-  constructor(private httpClient: HttpClient) { }
+  private ownerArticles = "http://localhost:8080/api/users/"
+  constructor(private httpClient: HttpClient, 
+  private token:TokenStorageService) { }
+
+  getId(){
+    const id = this.token.getUser().id;
+    return id;
+  }
 
   getArticleList(): Observable<Article[]>{
     return this.httpClient.get<Article[]>(this.baseUrl);
+  }
+
+  getArticleListByOwner(): Observable<Article[]>{
+    return this.httpClient.get<Article[]>(this.ownerArticles + `${this.getId()}` + `/articles`);
   }
 
   createArcticle(article: Article): Observable<any>{
