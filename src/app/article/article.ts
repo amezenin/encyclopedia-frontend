@@ -27,6 +27,5 @@ const article: any = {
 			userId: '1'
 		}
 	]
-	
 }
 

@@ -1,1 +1,37 @@
-<p>Only for Admins!</p>
+<h2>Users</h2>
+<div class="wrapper">
+<table class="table table-striped" >
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Login</th>
+			<th>Fisrtname</th>
+			<th>Lastname</th>
+			<th>Email</th>
+			<th>Active</th>
+			<th>Roles</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor = "let user of users">
+			<td >{{user.id}}</td>
+			<td>{{user.login}}</td>
+			<td>{{user.firstName}}</td>
+			<td>{{user.lastName}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.active}}</td>
+			<td>
+				<li *ngFor="let role of user.roles">
+				{{ role.name }}
+				</li>
+			</td>
+			<td>
+				<button  class="bi bi-pencil-square" id="updateButton" ></button>
+				<button  class="bi bi-trash" id="deleteButton" ></button>
+				<button  id="detailsButton" class="bi bi-search" ></button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="push"></div>
+</div>

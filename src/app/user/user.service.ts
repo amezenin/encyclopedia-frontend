@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { User } from './user';
 
 const API_URL = 'http://localhost:8080/api/users/';
 @Injectable({
@@ -8,11 +9,19 @@ const API_URL = 'http://localhost:8080/api/users/';
 })
 export class UserService {
 
+  user$ = new Subject();
+
   constructor(private http: HttpClient) { }
 
-  getPublicContent(): Observable<any> {
-    return this.http.get(API_URL + 'all', { responseType: 'text' });
+  getUserList(): Observable<User[]>{
+    return this.http.get<User[]>(API_URL + 'all');
   }
+
+  getUserById(id: number): Observable<User>{
+    return this.http.get<User>(API_URL + `${id}`);
+  }
+
+  
   getUserBoard(): Observable<any> {
     return this.http.get(API_URL + 'user', { responseType: 'text' });
   }

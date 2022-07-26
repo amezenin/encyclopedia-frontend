@@ -5,6 +5,11 @@ export interface User {
 	firstName: string;
 	lastName: string;
 	email: string;
+	active: boolean;
+	roles: [{
+		id: number;
+		name:string;
+	}];
 
 }
 
@@ -14,6 +19,13 @@ const user: any = {
 	password: "test",
 	fistName: "2022",
 	lastName: "1",
-	email: "email"
+	email: "email",
+	active: "true",
+	roles: [
+		{
+			id: '1',
+			name: 'ROLE_ADMIN',
+		}
+	]
 	
 }
