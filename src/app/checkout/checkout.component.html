@@ -40,7 +40,12 @@
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Sign in</button>
+			<button type="submit" class="btn btn-link" (click)="resetForm()">Clear form</button>
 		</form>
+		<div>
+				Entered value is: {{valueChangedTracked}}
+		</div>
 		<div class="push"></div>
 	</div>
 </div>
+
