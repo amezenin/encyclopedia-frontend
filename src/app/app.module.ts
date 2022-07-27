@@ -19,6 +19,8 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
 import { ProfileComponent } from './profile/profile.component';
 import { authInterceptorProviders } from './security/auth.interceptor';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,13 +39,15 @@ import { UserUpdateComponent } from './user/user-update/user-update.component';
     UserDetailsComponent,
     ProfileComponent,
     UserUpdateComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

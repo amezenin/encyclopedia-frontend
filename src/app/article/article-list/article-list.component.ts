@@ -29,7 +29,6 @@ export class ArticleListComponent implements OnInit {
     //i think it is not best way for printing login by userId
     this.getUsers();
     
-
   }
   
   //i think it is not best way for printing login by userId
@@ -95,7 +94,6 @@ export class ArticleListComponent implements OnInit {
       error: error => console.log(error)
     });
   }
-
 
 
 }
