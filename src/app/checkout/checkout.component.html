@@ -1,39 +1,46 @@
 <div class="wrapper">
-<div class="container">
-	<h3>Checkout form - using Reactive Forms by tutorials</h3>
-	<form [formGroup]="checkoutForm" (ngSubmit)="postData()">
-		<div class="form-group">
-			<label for="exampleFormControlInput1">Email address</label>
-			<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="email">
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect1">Status</label>
-			<select class="form-control" id="exampleFormControlSelect1" formControlName="status">
-				<option>true</option>
-				<option>false</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect2">Roles</label>
-			<select multiple class="form-control" id="exampleFormControlSelect2" formControlName="role">
-				<option>ROLE_USER</option>
-				<option>ROLE_ADMIN</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlTextarea1">Example textarea</label>
-			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="content"></textarea>
-		</div>
-		<div class="form-group">
-			<div class="form-check">
-				<input class="form-check-input" type="checkbox" id="gridCheck" formControlName="terms">
-				<label class="form-check-label" for="gridCheck">
-					Agree to Terms
-				</label>
+	<div class="container">
+		<h3>Checkout form - using Reactive Forms by tutorials</h3>
+		<form [formGroup]="checkoutForm" (ngSubmit)="postData()">
+			<div class="form-group">
+				<label for="exampleFormControlInput1">Email address</label>
+				<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="email">
+				<span *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.hasError('required')">Enter email</span>
+				<span *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.hasError('email')">Enter valid email</span>
+				<span *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.hasError('minlength')">Minimum 5 characters</span>
+				<span *ngIf="checkoutForm.get('email')?.touched && checkoutForm.get('email')?.hasError('maxlength')">Maximum 30 characters</span>
 			</div>
-		</div>
-		<button type="submit" class="btn btn-primary">Sign in</button>
-	</form>
-	<div class="push"></div>
-</div>
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">Status</label>
+				<select class="form-control" id="exampleFormControlSelect1" formControlName="status">
+					<option>true</option>
+					<option>false</option>
+				</select>
+				<span *ngIf="checkoutForm.get('status')?.touched && checkoutForm.get('status')?.hasError('required')">Enter status</span>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlSelect2">Roles</label>
+				<select multiple class="form-control" id="exampleFormControlSelect2" formControlName="role">
+					<option>ROLE_USER</option>
+					<option>ROLE_ADMIN</option>
+				</select>
+				<span *ngIf="checkoutForm.get('role')?.touched && checkoutForm.get('role')?.hasError('required')">Enter role</span>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Example textarea</label>
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="content"></textarea>
+				<span *ngIf="checkoutForm.get('content')?.touched && checkoutForm.get('content')?.hasError('required')">Enter content</span>
+			</div>
+			<div class="form-group">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck" formControlName="terms">
+					<label class="form-check-label" for="gridCheck">
+						Confirm
+					</label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Sign in</button>
+		</form>
+		<div class="push"></div>
+	</div>
 </div>
