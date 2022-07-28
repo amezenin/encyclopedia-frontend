@@ -31,6 +31,33 @@
 				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="content"></textarea>
 				<span *ngIf="checkoutForm.get('content')?.touched && checkoutForm.get('content')?.hasError('required')">Enter content</span>
 			</div>
+
+			<!-- implement formArray in template, many items 
+			Items:
+			<div formArrayName="items">
+				<button type="button" (click)="addItem()">+ Add another item</button>
+				<div *ngFor="let item of items.controls; let i=index">
+					<div [formGroupName]="i">
+						{{i}} item name :
+						<input type="text" formControlName="name"> Descrtiption:
+						<input type="text" formControlName="desc">
+						<button (click)="removeItem(i)">Remove</button>
+					</div>
+				</div>
+			</div>-->
+
+			<!-- implement formArray in template, one item -->
+			<div formGroupName="item">
+				<h2>Item</h2>
+
+				<label for="name">Name: </label>
+				<input id="name" type="text" formControlName="name">
+
+				<label for="desc">Description: </label>
+				<input id="desc" type="text" formControlName="desc">
+			</div>
+
+
 			<div class="form-group">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" id="gridCheck" formControlName="terms">
@@ -39,13 +66,13 @@
 					</label>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Sign in</button>
+			<button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Submit</button>
 			<button type="submit" class="btn btn-link" (click)="resetForm()">Clear form</button>
 		</form>
 		<div>
-				Entered value is: {{valueChangedTracked}}
+			Entered value is: {{valueChangedTracked}}
 		</div>
+		{{this.checkoutForm.value | json}}
 		<div class="push"></div>
 	</div>
 </div>
-

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms'
 
 @Component({
   selector: 'app-checkout',
@@ -21,6 +21,7 @@ export class CheckoutComponent implements OnInit {
     terms: new FormControl()
     })*/
 
+
     //Validation example
     //in tamplate do deactive post button with: [disabled]="!checkoutForm.valid"
     //if not all elements in form is filled - form is invalid and button not active
@@ -32,18 +33,68 @@ export class CheckoutComponent implements OnInit {
       status: ['', Validators.required],
       role: ['', Validators.required],
       content: ['', Validators.required],
-      terms: ['', Validators.requiredTrue] //for checkbox requiredTrue
-      })
+      terms: ['', Validators.requiredTrue], //for checkbox requiredTrue
+      //items: this.formBuilder.array([]), // many items
+      item: [{
+        name: [''],
+        desc: ['']
+      }]
+    })
+
   }
+
+  //one item
+  
+
+  //many items
+  /*
+  get items() : FormArray {
+    return this.checkoutForm.get("items") as FormArray
+  }
+ 
+  newItem(): FormGroup {
+    return this.formBuilder.group({
+      name: '',
+      desc: '',
+    })
+  }
+ 
+  addItem() {
+    this.items.push(this.newItem());
+  }
+ 
+  removeItem(i:number) {
+    this.items.removeAt(i);
+  }*/
+
+
+
 
   ngOnInit(): void {
 
+    /*formArray*/
+ 
+    /*statusChanges - observable. Need to subscribe.
+    important for controll form, easy find errors */
+    //by element
+    this.checkoutForm.get('email')?.statusChanges.subscribe({
+      next: (data:any) => {
+        this.valueChangedTracked = data;
+      }
+    });
+
+    //all form
+    this.checkoutForm.statusChanges.subscribe({
+      next: formState => {
+        console.log(formState);
+      }
+    });
+
     /* ValueChanges. Need to subscribe. */
-    //can show all changes
+    //can show all changes.  
     this.checkoutForm.valueChanges.subscribe({
       next: data => {
         console.log(data);
-        this.valueChangedTracked = data;
       }
     });
 
@@ -88,5 +139,7 @@ export class CheckoutComponent implements OnInit {
   resetForm(){
     this.checkoutForm.reset();// can use after post form data
   }
+
+  
 
 }
