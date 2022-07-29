@@ -34,20 +34,17 @@ export class CheckoutComponent implements OnInit {
       role: ['', Validators.required],
       content: ['', Validators.required],
       terms: ['', Validators.requiredTrue], //for checkbox requiredTrue
-      //items: this.formBuilder.array([]), // many items
-      item: [{
+      items: this.formBuilder.array([]), // many items
+      /*item: [{   //one item
         name: [''],
         desc: ['']
-      }]
+      }]*/
     })
 
   }
 
-  //one item
-  
 
-  //many items
-  /*
+  //many items, dynamical
   get items() : FormArray {
     return this.checkoutForm.get("items") as FormArray
   }
@@ -65,7 +62,7 @@ export class CheckoutComponent implements OnInit {
  
   removeItem(i:number) {
     this.items.removeAt(i);
-  }*/
+  }
 
 
 
@@ -133,6 +130,9 @@ export class CheckoutComponent implements OnInit {
     console.log(this.checkoutForm);
     console.log(this.checkoutForm.value); // can get values, valides etc...
     console.log('only email ' + this.checkoutForm.value.email);
+    console.log(this.checkoutForm.get('items')?.value); //get all items
+    const values = this.checkoutForm.get('items')?.value;
+    console.log(values[0].desc); //first item description
     this.checkoutForm.reset();
   }
 

@@ -1,0 +1,21 @@
+
+<div class="wrapper">
+	<div >
+		<h3>Roles</h3>
+			<table class="table table-striped" style="margin-bottom: 100px">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor = "let role of roles">
+							<td>{{role.id}}</td>
+							<td>{{role.name}}</td>
+						</tr>
+					</tbody>
+				</table>
+	</div>
+	<div class="push"></div>
+</div>

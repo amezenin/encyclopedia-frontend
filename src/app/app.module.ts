@@ -21,6 +21,7 @@ import { authInterceptorProviders } from './security/auth.interceptor';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RoleListComponent } from './role/role-list/role-list.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProfileComponent,
     UserUpdateComponent,
     CheckoutComponent,
+    RoleListComponent,
   ],
   imports: [
     BrowserModule,

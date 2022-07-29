@@ -1,13 +1,22 @@
 <div class="col-md-6 offset-md-3">
 	<h3>Update User</h3>
-	<form (ngSubmit) = "onSubmit()">
+	<form [formGroup]="userUpdateForm" (ngSubmit) = "onSubmit()">
 		<div class="form-group">
-			<label>Active</label>
-			<select [(ngModel)]="user.active" name="active" id="active" class="form-control">
-				<option value="false">false</option>
+			<label for="exampleFormControlSelect1">Active status</label>
+			<select class="form-control" id="exampleFormControlSelect1" formControlName="active">
 				<option value="true">true</option>
+				<option value="false">false</option>
 			</select>
+			<span *ngIf="userUpdateForm.get('active')?.touched && userUpdateForm.get('active')?.hasError('required')">Enter status</span>
 		</div>
-		<button class="btn btn-success" type="submit">Submit</button>
+		<div class="form-group">
+			<label for="exampleFormControlSelect2">Roles</label>
+			<select multiple class="form-control" id="exampleFormControlSelect2" formControlName="roles">
+				<option *ngFor="let role of rolesList" [value]="role">{{role.name}}</option>
+			</select>
+			<span *ngIf="userUpdateForm.get('role')?.touched && userUpdateForm.get('role')?.hasError('required')">Enter role</span>
+		</div>
+		<button type="submit" class="btn btn-primary" [disabled]="!userUpdateForm.valid">Submit</button>
 	</form>
+	{{this.userUpdateForm.value | json}}
 </div>
