@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TokenStorageService } from '../security/token-storage.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,9 @@ export class CommentService {
     return id;
   }
 
-  
+  deleteComment(id: number): Observable<any>{
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
+
+
 }

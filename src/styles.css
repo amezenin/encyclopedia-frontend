@@ -24,6 +24,12 @@
 	border-color: red;
 }
 
+#likeButton {
+	margin: 2.5px;
+	color: blue; 
+	border-color: blue;
+}
+
 #detailsButton { 
 	margin: 2.5px;
 }

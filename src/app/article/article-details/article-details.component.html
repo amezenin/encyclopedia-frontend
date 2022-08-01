@@ -27,13 +27,14 @@
 	</div>
 	<div>
 		<h3>Article comments</h3>
-		<table class="table table-striped" style="margin-bottom: 100px">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>Id</th>
 					<th>Content</th>
 					<th>Created Date</th>
 					<th>CreatedBy</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,25 +43,27 @@
 					<td>{{dat.content}}</td>
 					<td>{{dat.createdDate}}</td>
 					<td>{{dat.userId}}</td>
+					<td>
+						<button (click)="updateComment(dat.id, dat.userId)" class="bi bi-pencil-square" id="updateButton"></button>
+						<button (click)="deleteComment(dat.id, dat.userId)" class="bi bi-trash" id="deleteButton"></button>
+						<button (click)="like(dat.id)" class="bi bi-heart-fill" id="likeButton"></button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div>
-		<div class="col-md-6 offset-md-3">
-			<h3>Add comment</h3>
-			<form [formGroup]="createCommentForm" (ngSubmit)="onSubmit()">
-				<div class="form-group">
-					<label for="exampleFormControlInput1">Content</label>
-					<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Good article" formControlName="content">
-					<span *ngIf="createCommentForm.get('content')?.touched && createCommentForm.get('content')?.hasError('required')">Enter comment</span>
-					<span *ngIf="createCommentForm.get('content')?.touched && createCommentForm.get('content')?.hasError('minlength')">Minimum 1 characters</span>
-					<span *ngIf="createCommentForm.get('content')?.touched && createCommentForm.get('content')?.hasError('maxlength')">Maximum 400 characters</span>
-				</div>
-				<button type="submit" class="btn btn-primary" [disabled]="!createCommentForm.valid">Submit</button>
-			</form>
-			{{this.createCommentForm.value | json}}
-		</div>
+		<form [formGroup]="createCommentForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				<label>Add Comment</label>
+				<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Good article" formControlName="content">
+				<span *ngIf="createCommentForm.get('content')?.touched && createCommentForm.get('content')?.hasError('required')">Enter comment</span>
+				<span *ngIf="createCommentForm.get('content')?.touched && createCommentForm.get('content')?.hasError('minlength')">Minimum 1 characters</span>
+				<span *ngIf="createCommentForm.get('content')?.touched && createCommentForm.get('content')?.hasError('maxlength')">Maximum 400 characters</span>
+			</div>
+			<button type="submit" class="btn btn-primary" [disabled]="!createCommentForm.valid">Submit</button>
+		</form>
+		<!--{{this.createCommentForm.value | json}}-->
 	</div>
 	<div class="push"></div>
 </div>
