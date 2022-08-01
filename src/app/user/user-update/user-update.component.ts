@@ -58,8 +58,6 @@ export class UserUpdateComponent implements OnInit {
         console.log(data);
       }
     });
-
-
   }
 
   getRoles() {

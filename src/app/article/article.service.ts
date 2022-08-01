@@ -11,7 +11,8 @@ import { TokenStorageService } from '../security/token-storage.service';
 export class ArticleService {
 
   private baseUrl = "http://localhost:8080/api/articles";
-  private ownerArticles = "http://localhost:8080/api/users/"
+  private ownerArticles = "http://localhost:8080/api/users/";
+  private addCommentUrl = "http://localhost:8080/api/users/"
   constructor(private httpClient: HttpClient, 
   private token:TokenStorageService) { }
 
@@ -42,6 +43,10 @@ export class ArticleService {
 
   deleteArticle(id: number): Observable<any>{
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
+
+  createComment(id: number, comment:Comment): Observable<any>{
+    return this.httpClient.post(this.addCommentUrl + `${this.getId()}` + `/articles/${id}` + `/comments`, comment);
   }
 
 
