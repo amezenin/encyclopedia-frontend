@@ -1,1 +1,18 @@
-<p>comment-update works!</p>
+<div class="wrapper">
+<div class="col-md-6 offset-md-3">
+	<h3>Update Comment</h3>
+	<form [formGroup]="commentUpdateForm" (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="exampleFormControlSelect1">Content</label>
+			<input type="text" class="form-control" id="exampleFormControlInput1" formControlName="content">
+			<span *ngIf="commentUpdateForm.get('content')?.touched && commentUpdateForm.get('content')?.hasError('required')">Enter comment</span>
+			<span *ngIf="commentUpdateForm.get('content')?.touched && commentUpdateForm.get('content')?.hasError('minlength')">Minimum 1 characters</span>
+			<span *ngIf="commentUpdateForm.get('content')?.touched && commentUpdateForm.get('content')?.hasError('maxlength')">Maximum 400 characters</span>
+		</div>
+
+		<button type="submit" class="btn btn-primary" [disabled]="!commentUpdateForm.valid">Submit</button>
+	</form>
+	{{this.commentUpdateForm.value | json}}
+</div>
+<div class="push"></div>
+</div>

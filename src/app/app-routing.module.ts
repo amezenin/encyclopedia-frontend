@@ -11,6 +11,7 @@ import { RegisterComponent } from './security/register/register.component';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RoleListComponent } from './role/role-list/role-list.component';
+import { CommentUpdateComponent } from './comment/comment-update/comment-update.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'user-update/:id', component: UserUpdateComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'roles', component:RoleListComponent},
+  {path: 'comment-update/:id', component: CommentUpdateComponent },
   {path: '', redirectTo: 'login', pathMatch: 'full'} // empty link redirect to articleList
 ];
 

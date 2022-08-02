@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../article';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../article.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentService } from '../../comment/comment.service';
 import { TokenStorageService } from '../../security/token-storage.service';
+import { User } from '../../user/user';
+import { UserService } from '../../user/user.service';
 
 @Component({
   selector: 'app-article-details',
@@ -16,10 +18,14 @@ export class ArticleDetailsComponent implements OnInit {
   createCommentForm: FormGroup;
   id: number = 1; 
   article = {} as Article;
+  users:User[] = [];
   constructor(private route: ActivatedRoute,
-    private articleService: ArticleService, private formBuilder: FormBuilder,
-  private commentService: CommentService,
-  private token: TokenStorageService,) { 
+    private articleService: ArticleService, 
+    private formBuilder: FormBuilder,
+    private commentService: CommentService,
+    private token: TokenStorageService,
+    private userService: UserService,
+    private router: Router) { 
       this.createCommentForm = formBuilder.group({ // building form by FormBuilder
         content: ['',  [  Validators.required,  
                         Validators.minLength(1), 
@@ -34,12 +40,33 @@ export class ArticleDetailsComponent implements OnInit {
       this.article = data;
     });
 
+    this.getUsers();
+
     //can show all changes.  
     this.createCommentForm.valueChanges.subscribe({
       next: data => {
         console.log(data);
       }
     });
+  }
+
+  getUsers() {
+    this.userService.getUserList().subscribe({
+      next: data => {
+        this.users = data;
+        }, 
+      error: error => console.log(error)
+    });
+  }
+
+  getUserLoginById(id: number) {
+    const user =  this.users.find((user) => user.id === id)
+    if (!user) {
+      // we not found the parent
+      return ''
+    }
+    //console.log(user.login);
+    return user.login
   }
 
   onSubmit(){
@@ -53,12 +80,12 @@ export class ArticleDetailsComponent implements OnInit {
   }
 
   updateComment(id: number, userId: number){
-   /* if(userId == this.token.getUser().id || this.token.getUser().roles.includes("ROLE_ADMIN") == true ){
-      this.router.navigate(['update-article', id]);
+    if(userId == this.token.getUser().id || this.token.getUser().roles.includes("ROLE_ADMIN") == true ){
+      this.router.navigate(['comment-update', id]);
     } else {
-      alert("Only owner can edit article!");
+      alert("Only owner or admin can edit comment!");
     }
-    console.log("article did not create by user");  */
+    console.log("comment did not create by user");  
   }
 
   deleteComment(id: number, userId:number){
@@ -68,7 +95,7 @@ export class ArticleDetailsComponent implements OnInit {
         window.location.reload();
       });
     } else {
-      alert("Only owner or admin can delete article!");
+      alert("Only owner or admin can delete comment!");
     }
     console.log("article did not create by user");
   }

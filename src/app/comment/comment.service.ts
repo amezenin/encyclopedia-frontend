@@ -24,5 +24,13 @@ export class CommentService {
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 
+  getCommentById(id: number): Observable<Comment>{
+    return this.httpClient.get<Comment>(`${this.baseUrl}/${id}`);
+  }
+
+  updateComment(id: number, comment: Comment): Observable<any>{
+    return this.httpClient.patch(`${this.baseUrl}/${id}`, comment);
+  }
+
 
 }
