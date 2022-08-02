@@ -9,7 +9,13 @@ export interface Article {
 		content:string;
 		createdDate: string;
 		userId:number;
+		likes:[{
+			userId:number;
+		}]
 	}];
+	likes: [{
+		userId: number;
+	}]
 
 }
 
@@ -24,8 +30,14 @@ const article: any = {
 			id: '1',
 			content: 'comment',
 			createdDate: '2222',
-			userId: '1'
+			userId: '1',
+			likes: [{
+				userId: '1'
+			}]
 		}
-	]
+	],
+	likes: [{
+		userId: '1'
+	}]
 }
 

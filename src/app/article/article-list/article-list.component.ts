@@ -28,6 +28,7 @@ export class ArticleListComponent implements OnInit {
     this.getArticles();
     //i think it is not best way for printing login by userId
     this.getUsers();
+    this.likeCount();
     
   }
   
@@ -93,6 +94,15 @@ export class ArticleListComponent implements OnInit {
         }, 
       error: error => console.log(error)
     });
+  }
+
+  likeCount(){
+    this.articles.forEach(art => 
+    art.likes?.length);
+  }
+
+  like(id: number){
+    
   }
 
 

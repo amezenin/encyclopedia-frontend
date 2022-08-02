@@ -19,6 +19,7 @@ export class ArticleDetailsComponent implements OnInit {
   id: number = 1; 
   article = {} as Article;
   users:User[] = [];
+  //comment: any = {};
   constructor(private route: ActivatedRoute,
     private articleService: ArticleService, 
     private formBuilder: FormBuilder,
@@ -32,6 +33,7 @@ export class ArticleDetailsComponent implements OnInit {
                         Validators.maxLength(400)]],  
       })
     }
+
 
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
@@ -69,6 +71,8 @@ export class ArticleDetailsComponent implements OnInit {
     return user.login
   }
 
+  getCommentById(){}
+
   onSubmit(){
     this.articleService.createComment(this.id, this.createCommentForm.value).subscribe({
       next: () =>  {
@@ -100,9 +104,11 @@ export class ArticleDetailsComponent implements OnInit {
     console.log("article did not create by user");
   }
 
+  
+
   like(id: number){
     
-   }
+  }
 
 
 }

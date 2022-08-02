@@ -15,6 +15,7 @@
 			<th>Content</th>
 			<th>Created Date</th>
 			<th>CreatedBy</th>
+			<th>Likes</th>
 			<th>Actions</th>
 		</tr>
 	</thead>
@@ -25,10 +26,12 @@
 			<td>{{article.content}}</td>
 			<td>{{article.createdDate}}</td>
 			<td>{{getUserLoginById(article.userId)}}</td>
+			<td>{{article.likes.length}}</td>
 			<td>
 				<button (click) ="updateArticle(article.id, article.userId)" class="bi bi-pencil-square" id="updateButton" ></button>
 				<button (click) ="deleteArticle(article.id, article.userId)" class="bi bi-trash" id="deleteButton" ></button>
 				<button (click) ="articleDetails(article.id)" id="detailsButton" class="bi bi-search" ></button>
+				<button (click)="like(article.id)" class="bi bi-heart-fill" id="likeButton"></button>
 			</td>
 		</tr>
 	</tbody>
