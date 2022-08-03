@@ -4,6 +4,7 @@ export interface Article {
 	content: string;
 	createdDate: string;
 	userId: number;
+	likeUserId: number;
 	commentList: [{
 		id: number;
 		content:string;
@@ -14,7 +15,17 @@ export interface Article {
 		}]
 	}];
 	likes: [{
-		userId: number;
+			id: number;
+			login: string;
+			password: string;
+			firstName: string;
+			lastName: string;
+			email: string;
+			active: boolean;
+			roles: [{
+				id: number;
+				name:string;
+			}];
 	}]
 
 }
@@ -25,6 +36,7 @@ const article: any = {
 	content: "test",
 	createdDate: "2022",
 	userId: "1",
+	likeUserId: '1',
 	commentList: [
 		{
 			id: '1',
@@ -37,7 +49,19 @@ const article: any = {
 		}
 	],
 	likes: [{
-		userId: '1'
+		id: '1',
+		login: 'test',
+		password: "test",
+		fistName: "2022",
+		lastName: "1",
+		email: "email",
+		active: "true",
+		roles: [
+			{
+				id: '1',
+				name: 'ROLE_ADMIN',
+			}
+		],
 	}]
 }
 

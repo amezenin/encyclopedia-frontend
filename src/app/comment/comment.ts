@@ -4,8 +4,19 @@ export interface Comment {
 	createdDate: string;
 	userId: number;
 	articleId: number;
+	likeUserId: number;
 	likes:[{
-		userId: number
+		id: number;
+		login: string;
+		password: string;
+		firstName: string;
+		lastName: string;
+		email: string;
+		active: boolean;
+		roles: [{
+			id: number;
+			name:string;
+		}];
 	}]
 
 }
@@ -16,8 +27,21 @@ const comment: any = {
 	createdDate: "2022",
 	userId: "1",
 	articleId: "1",
+	likeUserId: '1',
 	likes: [{
-		userId: '1'
+		id: '1',
+		login: 'test',
+		password: "test",
+		fistName: "2022",
+		lastName: "1",
+		email: "email",
+		active: "true",
+		roles: [
+			{
+				id: '1',
+				name: 'ROLE_ADMIN',
+			}
+		],
 	}]
 	
 }

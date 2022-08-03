@@ -18,8 +18,12 @@ export class ArticleDetailsComponent implements OnInit {
   createCommentForm: FormGroup;
   id: number = 1; 
   article = {} as Article;
+  //comment = {} as Comment;
   users:User[] = [];
-  //comment: any = {};
+  comments:Comment[] = [];
+  comment: any = {};
+  user:any = {};
+  currentUser:any = {};
   constructor(private route: ActivatedRoute,
     private articleService: ArticleService, 
     private formBuilder: FormBuilder,
@@ -44,6 +48,13 @@ export class ArticleDetailsComponent implements OnInit {
 
     this.getUsers();
 
+    this.userService.getUserById(this.token.getUser().id).subscribe({
+      next: data => {
+        this.user = data}, 
+      error: error => console.log(error)
+    });
+    console.log(this.currentUser)
+
     //can show all changes.  
     this.createCommentForm.valueChanges.subscribe({
       next: data => {
@@ -61,6 +72,16 @@ export class ArticleDetailsComponent implements OnInit {
     });
   }
 
+  getUser() {
+    const user =  this.users.find((user) => user.id === this.token.getUser().id)
+    if (!user) {
+      return ''
+    }
+    console.log(user.login);
+    return user
+  }
+
+
   getUserLoginById(id: number) {
     const user =  this.users.find((user) => user.id === id)
     if (!user) {
@@ -71,7 +92,8 @@ export class ArticleDetailsComponent implements OnInit {
     return user.login
   }
 
-  getCommentById(){}
+  
+
 
   onSubmit(){
     this.articleService.createComment(this.id, this.createCommentForm.value).subscribe({
@@ -88,8 +110,9 @@ export class ArticleDetailsComponent implements OnInit {
       this.router.navigate(['comment-update', id]);
     } else {
       alert("Only owner or admin can edit comment!");
+      console.log("comment did not create by user");
     }
-    console.log("comment did not create by user");  
+      
   }
 
   deleteComment(id: number, userId:number){
@@ -105,10 +128,24 @@ export class ArticleDetailsComponent implements OnInit {
   }
 
   
+  getComment(id:number) {
+    this.commentService.getCommentById(id).subscribe({
+      next: data => {
+        this.comment = data;
+        }, 
+      error: error => console.log(error)
+    });
+  }
 
   like(id: number){
     
+    console.log(this.article); //json object correct, but didnt update in DB
+    this.article.likeUserId = this.token.getUser()
+
+    this.articleService.updateArticle(id, this.article);
   }
+
+  
 
 
 }

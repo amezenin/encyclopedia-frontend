@@ -32,5 +32,9 @@ export class CommentService {
     return this.httpClient.patch(`${this.baseUrl}/${id}`, comment);
   }
 
+  getCommentList(): Observable<Comment[]>{
+    return this.httpClient.get<Comment[]>(this.baseUrl + `/all`);
+  }
+
 
 }

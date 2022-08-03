@@ -10,6 +10,7 @@ export interface User {
 		id: number;
 		name:string;
 	}];
+	
 
 }
 
@@ -26,6 +27,5 @@ const user: any = {
 			id: '1',
 			name: 'ROLE_ADMIN',
 		}
-	]
-	
+	],
 }

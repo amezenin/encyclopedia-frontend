@@ -16,8 +16,8 @@ export class ArticleListComponent implements OnInit {
   articles: Article[] = [];
   users:User[] = [];
   isOwner = false;
-  //login?:string;
-
+  article: any = {}
+  user: any = {}
   constructor(private articleService: ArticleService,
     private router: Router,
     private token: TokenStorageService,
@@ -28,7 +28,12 @@ export class ArticleListComponent implements OnInit {
     this.getArticles();
     //i think it is not best way for printing login by userId
     this.getUsers();
-    this.likeCount();
+
+    this.userService.getUserById(this.token.getUser().id).subscribe({
+      next: data => {
+        this.user = data}, 
+      error: error => console.log(error)
+    });
     
   }
   
@@ -67,8 +72,8 @@ export class ArticleListComponent implements OnInit {
       this.router.navigate(['update-article', id]);
     } else {
       alert("Only owner can edit article!");
+      console.log("article did not create by user");
     }
-    console.log("article did not create by user");  
   }
 
   deleteArticle(id: number, userId:number){
@@ -96,13 +101,23 @@ export class ArticleListComponent implements OnInit {
     });
   }
 
-  likeCount(){
-    this.articles.forEach(art => 
-    art.likes?.length);
+  getArticle(id: number) {
+    const article =  this.articles.find((article) => article.id === id)
+    if (!article) {
+      return ''
+    }
+    article.likeUserId = this.token.getUser().id;
+    //article.likes.push(this.user);
+    return article
   }
 
+
   like(id: number){
-    
+    this.article = this.getArticle(id)
+    console.log(this.article); //json object correct, but didnt update in DB
+    this.article.likes.push(this.user);
+
+    this.articleService.updateArticle(id, this.article);
   }
 
 

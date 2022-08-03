@@ -28,7 +28,7 @@
 	<div>
 		<label>
 			<b>Likes: </b>
-		</label> {{article.likes.length}}
+		</label> {{article.likes?.length}}
 	</div>
 	<div>
 		<h3>Article comments</h3>
@@ -49,11 +49,10 @@
 					<td>{{dat.content}}</td>
 					<td>{{dat.createdDate}}</td>
 					<td>{{getUserLoginById(dat.userId)}}</td>
-					<td>{{dat.likes.length}}</td>
+					<td>{{dat.likes?.length}}</td>
 					<td>
 						<button (click)="updateComment(dat.id, dat.userId)" class="bi bi-pencil-square" id="updateButton"></button>
 						<button (click)="deleteComment(dat.id, dat.userId)" class="bi bi-trash" id="deleteButton"></button>
-						<button (click)="like(dat.id)" class="bi bi-heart-fill" id="likeButton"></button>
 					</td>
 				</tr>
 			</tbody>
