@@ -7,6 +7,7 @@ import { CommentService } from '../../comment/comment.service';
 import { TokenStorageService } from '../../security/token-storage.service';
 import { User } from '../../user/user';
 import { UserService } from '../../user/user.service';
+import { Comment } from '../../comment/comment';
 
 @Component({
   selector: 'app-article-details',
@@ -15,6 +16,9 @@ import { UserService } from '../../user/user.service';
 })
 export class ArticleDetailsComponent implements OnInit {
 
+  /*
+    Code is very dirty. I tried different ways.
+  */
   createCommentForm: FormGroup;
   id: number = 1; 
   article = {} as Article;
@@ -47,13 +51,13 @@ export class ArticleDetailsComponent implements OnInit {
     });
 
     this.getUsers();
+    this.getComments();
 
     this.userService.getUserById(this.token.getUser().id).subscribe({
       next: data => {
         this.user = data}, 
       error: error => console.log(error)
     });
-    console.log(this.currentUser)
 
     //can show all changes.  
     this.createCommentForm.valueChanges.subscribe({
@@ -127,25 +131,32 @@ export class ArticleDetailsComponent implements OnInit {
     console.log("article did not create by user");
   }
 
-  
-  getComment(id:number) {
-    this.commentService.getCommentById(id).subscribe({
+  getComments(){
+    this.commentService.getCommentList().subscribe({
       next: data => {
-        this.comment = data;
+        this.comments = data;
+        console.log(this.comments)
         }, 
       error: error => console.log(error)
     });
   }
 
-  like(id: number){
-    
-    console.log(this.article); //json object correct, but didnt update in DB
-    this.article.likeUserId = this.token.getUser()
-
-    this.articleService.updateArticle(id, this.article);
+  
+  getComment(id: number) {
+    const comment =  this.comments.find((comment) => comment.id === id)
+    if (!comment) {
+      return ''
+    }
+    return comment
   }
 
-  
-
+  like(id: number){
+    this.comment = this.getComment(id)
+    console.log(this.comment); //json object correct, but didnt update in DB
+    this.comment.likes.push(this.user);
+    this.commentService.updateComment(id, this.comment).subscribe({ 
+      next: data =>{},
+      error: error => console.log(error)});
+  }
 
 }

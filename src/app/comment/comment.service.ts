@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TokenStorageService } from '../security/token-storage.service';
 import { Observable } from 'rxjs';
+import { Comment } from './comment';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class CommentService {
   }
 
   getCommentList(): Observable<Comment[]>{
-    return this.httpClient.get<Comment[]>(this.baseUrl + `/all`);
+    return this.httpClient.get<Comment[]>(`${this.baseUrl}` + `/all`);
   }
 
 

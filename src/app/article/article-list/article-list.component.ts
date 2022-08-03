@@ -13,6 +13,9 @@ import { User } from '../../user/user';
 })
 export class ArticleListComponent implements OnInit {
 
+  /*
+    Code is very dirty. I tried different ways.
+  */
   articles: Article[] = [];
   users:User[] = [];
   isOwner = false;
@@ -62,6 +65,7 @@ export class ArticleListComponent implements OnInit {
     this.articleService.getArticleList().subscribe({
       next: data => {
         this.articles = data;
+        console.log(this.articles)
         }, 
       error: error => console.log(error)
     });
@@ -106,8 +110,6 @@ export class ArticleListComponent implements OnInit {
     if (!article) {
       return ''
     }
-    article.likeUserId = this.token.getUser().id;
-    //article.likes.push(this.user);
     return article
   }
 
@@ -117,7 +119,9 @@ export class ArticleListComponent implements OnInit {
     console.log(this.article); //json object correct, but didnt update in DB
     this.article.likes.push(this.user);
 
-    this.articleService.updateArticle(id, this.article);
+    this.articleService.updateArticle(id, this.article).subscribe({ 
+      next: data =>{},
+      error: error => console.log(error)});
   }
 
 

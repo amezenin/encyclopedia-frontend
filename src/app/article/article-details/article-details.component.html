@@ -44,15 +44,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let dat of article.commentList ">
-					<td>{{dat.id}}</td>
-					<td>{{dat.content}}</td>
-					<td>{{dat.createdDate}}</td>
-					<td>{{getUserLoginById(dat.userId)}}</td>
-					<td>{{dat.likes?.length}}</td>
+				<tr *ngFor="let comment of article.commentList ">
+					<td>{{comment.id}}</td>
+					<td>{{comment.content}}</td>
+					<td>{{comment.createdDate}}</td>
+					<td>{{getUserLoginById(comment.userId)}}</td>
+					<td>{{comment.likes.length}}</td>
 					<td>
-						<button (click)="updateComment(dat.id, dat.userId)" class="bi bi-pencil-square" id="updateButton"></button>
-						<button (click)="deleteComment(dat.id, dat.userId)" class="bi bi-trash" id="deleteButton"></button>
+						<button (click)="updateComment(comment.id, comment.userId)" class="bi bi-pencil-square" id="updateButton"></button>
+						<button (click)="deleteComment(comment.id, comment.userId)" class="bi bi-trash" id="deleteButton"></button>
+						<button (click)="like(comment.id)" class="bi bi-heart-fill" id="likeButton"></button>
 					</td>
 				</tr>
 			</tbody>
