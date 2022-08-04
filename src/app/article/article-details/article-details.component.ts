@@ -27,6 +27,7 @@ export class ArticleDetailsComponent implements OnInit {
   comments:Comment[] = [];
   comment: any = {};
   user:any = {};
+  unique: Comment[] = [];
   currentUser:any = {};
   constructor(private route: ActivatedRoute,
     private articleService: ArticleService, 
@@ -153,10 +154,23 @@ export class ArticleDetailsComponent implements OnInit {
   like(id: number){
     this.comment = this.getComment(id)
     console.log(this.comment); //json object correct, but didnt update in DB
-    this.comment.likes.push(this.user);
+    
+   //like dislike controll
+    if (this.comment.likes.find((user:any) => user.id === this.token.getUser().id) === undefined) {
+      this.comment.likes.push(this.user);
+    } else {
+      this.comment.likes = this.comment.likes.filter((user:any) => user.id !== this.token.getUser().id);
+    }
+
     this.commentService.updateComment(id, this.comment).subscribe({ 
       next: data =>{},
       error: error => console.log(error)});
   }
 
+
+
+
+
 }
+
+

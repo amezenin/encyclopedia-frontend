@@ -117,7 +117,13 @@ export class ArticleListComponent implements OnInit {
   like(id: number){
     this.article = this.getArticle(id)
     console.log(this.article); //json object correct, but didnt update in DB
-    this.article.likes.push(this.user);
+    
+    //like dislike controll
+    if (this.article.likes.find((user:any) => user.id === this.token.getUser().id) === undefined) {
+      this.article.likes.push(this.user);
+    } else {
+      this.article.likes = this.article.likes.filter((user:any) => user.id !== this.token.getUser().id);
+    }
 
     this.articleService.updateArticle(id, this.article).subscribe({ 
       next: data =>{},
