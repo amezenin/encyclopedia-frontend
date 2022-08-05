@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2294777640901016043" datatype="html">
+        <source>Artices </source>
+        <target>Artikkel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">5,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9068853875486998528" datatype="html">
+        <source>Create aricles</source>
+        <target>Uus artikkel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4555457172864212828" datatype="html">
+        <source>Users</source>
+        <target>Kasutajad</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">11,14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">1,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="795890916060309463" datatype="html">
+        <source>Roles</source>
+        <target>Roll</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">14,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/role/role-list/role-list.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">12,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1466012768716286509" datatype="html">
+        <source>Sign Up</source>
+        <target>Registreeri</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">19,22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">2,6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">36,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5207635742003539443" datatype="html">
+        <source>Sign in</source>
+        <target>Logi sisse</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">22,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1884804869474995747" datatype="html">
+        <source>LogOut</source>
+        <target>Logi välja</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">30,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="footer&quot;&gt;
+	&lt;div"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">40,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="769197205412676373" datatype="html">
+        <source>All Rights Reserved 2022 @amezenin</source>
+        <target>All Rights Reserved 2022 @amezenin</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">47,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="942604157940625680" datatype="html">
+        <source>Encyclopedia Angular + Spring Boot</source>
+        <target>Entsüklopeedia Angular + Spring Boot</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4728429824513734110" datatype="html">
+        <source>View Article Details</source>
+        <target>Artikli vaade</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">1,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1540494057064307344" datatype="html">
+        <source>Id: </source>
+        <target>№: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">6,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2224609992551286941" datatype="html">
+        <source>Title: </source>
+        <target>Pealkiri: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">10,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8727387071629795713" datatype="html">
+        <source>Content: </source>
+        <target>Sisu: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">15,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4804210323759896135" datatype="html">
+        <source>Created Date: </source>
+        <target>Loomise kuupäev: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">20,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4117582717508206732" datatype="html">
+        <source>CreatedBy: </source>
+        <target>Autor: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">25,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8329550808097997025" datatype="html">
+        <source>Likes: </source>
+        <target>Likes: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">30,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4513530605456365149" datatype="html">
+        <source>Article comments</source>
+        <target>Artikli kommentaarid: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">34,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7286430803380181008" datatype="html">
+        <source>Id</source>
+        <target>№</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/role/role-list/role-list.component.html</context>
+          <context context-type="linenumber">9,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6205355627445317276" datatype="html">
+        <source>Content</source>
+        <target>Sisu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">39,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">15,18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/create-article/create-article.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/update-article/update-article.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/comment/comment-update/comment-update.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4419255670681936886" datatype="html">
+        <source>Created Date</source>
+        <target>Loomise kuupäev</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">40,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">16,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9215133063211811946" datatype="html">
+        <source>CreatedBy</source>
+        <target>Autor</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">41,46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">17,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7112532281224432421" datatype="html">
+        <source>Likes</source>
+        <target>Likes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">42,47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">18,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9216117865911519658" datatype="html">
+        <source>Action</source>
+        <target>Tegevus</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">43,47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">13,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="189861158609674899" datatype="html">
+        <source>Add Comment</source>
+        <target>Lisa kommentaarid</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2122666445936087317" datatype="html">
+        <source>Enter comment</source>
+        <target>Kirjuta kommentaari</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/comment/comment-update/comment-update.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8136814179444976459" datatype="html">
+        <source>Minimum 1 characters</source>
+        <target>Minimum 1 sübol</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/comment/comment-update/comment-update.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2756797845332400149" datatype="html">
+        <source>Maximum 400 characters</source>
+        <target>Maksimum 400 sübolit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">69,71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/comment/comment-update/comment-update.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="935187492052582731" datatype="html">
+        <source>Submit</source>
+        <target>Post</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-details/article-details.component.html</context>
+          <context context-type="linenumber">71,75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/create-article/create-article.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/update-article/update-article.component.html</context>
+          <context context-type="linenumber">14,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/comment/comment-update/comment-update.component.html</context>
+          <context context-type="linenumber">18,22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">19,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5539833462297888878" datatype="html">
+        <source>Articles</source>
+        <target>Artiklid</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3580492974327944323" datatype="html">
+        <source> Show all articles
+</source>
+<target>Näita kõik</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6352672033927770694" datatype="html">
+        <source> Show only my articles
+</source>
+<target>Minu artiklid</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">6,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5701618810648052610" datatype="html">
+        <source>Title</source>
+        <target>Pealkiri</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">14,17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/create-article/create-article.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/update-article/update-article.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3193976279273491157" datatype="html">
+        <source>Actions</source>
+        <target>Tegevus</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/article-list/article-list.component.html</context>
+          <context context-type="linenumber">19,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4717788903079415280" datatype="html">
+        <source>Create Article</source>
+        <target>Loo artikkel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/create-article/create-article.component.html</context>
+          <context context-type="linenumber">2,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3914810121584661113" datatype="html">
+        <source>Update Article</source>
+        <target>Uuenda artikli</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/article/update-article/update-article.component.html</context>
+          <context context-type="linenumber">2,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4799332776881397185" datatype="html">
+        <source>Update Comment</source>
+        <target>Uuenda kommentaari</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/comment/comment-update/comment-update.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <target>Nimetus</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/role/role-list/role-list.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6542676228301148432" datatype="html">
+        <source>login</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">12,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8060417984977290504" datatype="html">
+        <source> Login is required! </source>
+        <target>Login kohustuslik!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">26,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1431416938026210429" datatype="html">
+        <source>Password</source>
+        <target>Salasõna</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">30,33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="205044832662301680" datatype="html">
+        <source>Password is required</source>
+        <target>Salasõna kohustuslik!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">44,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8699512499166571818" datatype="html">
+        <source> Password must be at least 6 characters </source>
+        <target>Minimum 6 sümbolit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">46,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6663783128602596673" datatype="html">
+        <source> Sign in </source>
+        <target>Logi sisse </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">52,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5470937899727363724" datatype="html">
+        <source>Login failed:</source>
+        <target>Sisse logimine katkestatud: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">61,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8364459721751041036" datatype="html">
+        <source>Logged in as: </source>
+        <target>Sisse logitud: </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/login/login.component.html</context>
+          <context context-type="linenumber">66,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">7,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+        <target>E-mail</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">10,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4360072995007239979" datatype="html">
+        <source>Firstname</source>
+        <target>Eesnimi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7617062131879090220" datatype="html">
+        <source>Lastname</source>
+        <target>Perekonnanimi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">9,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1013152642263650897" datatype="html">
+        <source> Signup failed!<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;{{ errorMessage }}
+    &lt;/"/><x id="INTERPOLATION" equiv-text="{{ errorMessage"/> </source>
+    <target>Registreerimine katkestatud!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4441673788357059575" datatype="html">
+        <source> Your registration is successful! </source>
+        <target>Teie kasutaja on registreeritud!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/security/register/register.component.html</context>
+          <context context-type="linenumber">42,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2490728016359238357" datatype="html">
+        <source>Fisrtname</source>
+        <target>Eesnimi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">8,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5611592591303869712" datatype="html">
+        <source>Status</source>
+        <target>Status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-list/user-list.component.html</context>
+          <context context-type="linenumber">11,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6020357970867883938" datatype="html">
+        <source>Update User</source>
+        <target>Uuenda kasutaja</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7746070131399325104" datatype="html">
+        <source>Active status</source>
+        <target>Status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8510110714273600559" datatype="html">
+        <source>true</source>
+        <target>Aktiveeri</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">7,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1444040760165348386" datatype="html">
+        <source>Blokeeri</source>
+        <target>Заблокировать</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3980357645247895851" datatype="html">
+        <source>Enter status</source>
+        <target>Vali status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7242214454069100946" datatype="html">
+        <source>Enter role</source>
+        <target>Vali roll</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/user-update/user-update.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

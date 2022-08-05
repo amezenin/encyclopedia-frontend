@@ -18,7 +18,8 @@ export class AppComponent {
 
   localeList: any = [
     {code: 'en-US', label: 'English'},
-    {code: 'ru', label: 'Русский'}
+    {code: 'ru', label: 'Русский'},
+    {code: 'ee', label: 'Eesti'}
   ]
 
   constructor(public tokenStorageService: TokenStorageService,

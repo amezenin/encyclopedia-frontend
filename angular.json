@@ -5,9 +5,10 @@
   "projects": {
     "encyclopedia-frontend": {
       "i18n":{
-        "sourceLocale":"en-US",
+        "sourceLocale":"en",
         "locales":{
-          "ru": "src/locale/messages.ru.xlf"
+          "ru": "src/locale/messages.ru.xlf",
+          "ee": "src/locale/messages.ee.xlf"
         }
       },
       "projectType": "application",
@@ -37,6 +38,9 @@
           "configurations": {
             "ru": {
               "localize": ["ru"]
+            },
+            "ee": {
+              "localize": ["ee"]
             },
             "production": {
               "budgets": [
@@ -78,6 +82,9 @@
             },
             "ru": {
               "browserTarget": "encyclopedia-frontend:build:ru"
+            },
+            "ee": {
+              "browserTarget": "encyclopedia-frontend:build:ee"
             },
             "development": {
               "browserTarget": "encyclopedia-frontend:build:development"
