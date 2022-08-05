@@ -37,5 +37,9 @@ export class CommentService {
     return this.httpClient.get<Comment[]>(`${this.baseUrl}` + `/all`);
   }
 
+  createComment(id: number, comment:Comment): Observable<any>{
+    return this.httpClient.post(this.baseUrl + `/articles/${id}` + `/users/${this.getUserId()}`, comment);
+  }
+
 
 }

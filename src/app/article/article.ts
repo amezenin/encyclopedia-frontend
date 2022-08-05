@@ -11,7 +11,17 @@ export interface Article {
 		createdDate: string;
 		userId:number;
 		likes:[{
-			userId:number;
+			id: number;
+			login: string;
+			password: string;
+			firstName: string;
+			lastName: string;
+			email: string;
+			active: boolean;
+			roles: [{
+				id: number;
+				name:string;
+			}];
 		}]
 	}];
 	likes: [{

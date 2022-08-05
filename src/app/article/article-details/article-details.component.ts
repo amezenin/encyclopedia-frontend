@@ -27,7 +27,6 @@ export class ArticleDetailsComponent implements OnInit {
   comments:Comment[] = [];
   comment: any = {};
   user:any = {};
-  unique: Comment[] = [];
   currentUser:any = {};
   constructor(private route: ActivatedRoute,
     private articleService: ArticleService, 
@@ -101,7 +100,7 @@ export class ArticleDetailsComponent implements OnInit {
 
 
   onSubmit(){
-    this.articleService.createComment(this.id, this.createCommentForm.value).subscribe({
+    this.commentService.createComment(this.id, this.createCommentForm.value).subscribe({
       next: () =>  {
         window.location.reload();
       }
@@ -158,6 +157,7 @@ export class ArticleDetailsComponent implements OnInit {
    //like dislike controll
     if (this.comment.likes.find((user:any) => user.id === this.token.getUser().id) === undefined) {
       this.comment.likes.push(this.user);
+      
     } else {
       this.comment.likes = this.comment.likes.filter((user:any) => user.id !== this.token.getUser().id);
     }
@@ -167,7 +167,11 @@ export class ArticleDetailsComponent implements OnInit {
       error: error => console.log(error)});
   }
 
+  public trackById (comment: Comment): number {
+    return comment.id;
+  }
 
+  
 
 
 

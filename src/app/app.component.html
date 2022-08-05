@@ -1,45 +1,45 @@
 <div id="app">
 	<nav class="navbar navbar-expand navbar-dark bg-primary">
-	  <ul class="navbar-nav mr-auto" routerLinkActive="active">
-		<li class="nav-item">
-		  <a href class="nav-link" routerLink="articles">Artices </a>
-		</li>
-		<li class="nav-item" >
-		  <a href  class="nav-link" *ngIf="isLoggedIn" routerLink="create-article">Create aricles</a>
-		</li>
-		<li class="nav-item">
-		  <a href class="nav-link" *ngIf="isAdmin" routerLink="users">Users</a>
-		</li>
-		<li class="nav-item">
-		  <a href class="nav-link" *ngIf="isAdmin" routerLink="roles">Roles</a>
-		</li>
-	  </ul>
-	  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-		<li class="nav-item">
-		  <a href class="nav-link" routerLink="register">Sign Up</a>
-		</li>
-		<li class="nav-item">
-		  <a href class="nav-link" routerLink="login">Login</a>
-		</li>
-	  </ul>
-	  <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-		<li class="nav-item">
-		  <a href class="nav-link" routerLink="profile">{{ login }}</a>
-		</li>
-		<li class="nav-item">
-		  <a href class="nav-link" (click)="logout()">LogOut</a>
-		</li>
-	  </ul>
+		<ul class="navbar-nav mr-auto" routerLinkActive="active">
+			<li class="nav-item">
+				<a href class="nav-link" routerLink="articles">Artices </a>
+			</li>
+			<li class="nav-item">
+				<a href class="nav-link" *ngIf="isLoggedIn" routerLink="create-article">Create aricles</a>
+			</li>
+			<li class="nav-item">
+				<a href class="nav-link" *ngIf="isAdmin" routerLink="users">Users</a>
+			</li>
+			<li class="nav-item">
+				<a href class="nav-link" *ngIf="isAdmin" routerLink="roles">Roles</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+			<li class="nav-item">
+				<a href class="nav-link" routerLink="register">Sign Up</a>
+			</li>
+			<li class="nav-item">
+				<a href class="nav-link" routerLink="login">Login</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+			<li class="nav-item">
+				<a href class="nav-link" routerLink="profile">{{ login }}</a>
+			</li>
+			<li class="nav-item">
+				<a href class="nav-link" (click)="logout()">LogOut</a>
+			</li>
+		</ul>
 	</nav>
 	<div class="container">
-	  <router-outlet></router-outlet>
+		<router-outlet></router-outlet>
 	</div>
-  </div>
+</div>
 
 
 <h1 class="text-center">{{title}}</h1>
 <div class="container">
-		<router-outlet></router-outlet>
+	<router-outlet></router-outlet>
 </div>
 
 <footer class="footer">

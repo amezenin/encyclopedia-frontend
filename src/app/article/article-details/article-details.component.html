@@ -44,7 +44,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let comment of article.commentList ">
+				<tr *ngFor="let comment of article.commentList; ">
 					<td>{{comment.id}}</td>
 					<td>{{comment.content}}</td>
 					<td>{{comment.createdDate}}</td>
@@ -53,7 +53,7 @@
 					<td>
 						<button (click)="updateComment(comment.id, comment.userId)" class="bi bi-pencil-square" id="updateButton"></button>
 						<button (click)="deleteComment(comment.id, comment.userId)" class="bi bi-trash" id="deleteButton"></button>
-						<button (click)="like(comment.id)" class="bi bi-heart-fill" id="likeButton"></button>
+						<button (click)="like(comment.id)" class="bi bi-heart-fill" id="likeButton"></button>			
 					</td>
 				</tr>
 			</tbody>
