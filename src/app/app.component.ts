@@ -14,7 +14,7 @@ export class AppComponent {
   isAdmin = false;
   //showModeratorBoard = false;
   login?: string;
-  title = 'Encyclopedia Angular + Spring Boot';
+  title = $localize `Encyclopedia Angular + Spring Boot`;
 
   constructor(public tokenStorageService: TokenStorageService,
     public router: Router) { }

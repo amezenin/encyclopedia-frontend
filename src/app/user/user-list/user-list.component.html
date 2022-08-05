@@ -1,20 +1,21 @@
-<h2>Users</h2>
+<h2 i18n>Users</h2>
 <div class="wrapper">
 <table class="table table-striped" >
 	<thead>
 		<tr>
-			<th>Id</th>
-			<th>Login</th>
-			<th>Fisrtname</th>
-			<th>Lastname</th>
-			<th>Email</th>
-			<th>Active</th>
-			<th>Roles</th>
+			<th i18n>Id</th>
+			<th i18n>Login</th>
+			<th i18n>Fisrtname</th>
+			<th i18n>Lastname</th>
+			<th i18n>Email</th>
+			<th i18n>Status</th>
+			<th i18n>Roles</th>
+			<th i18n>Action</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr *ngFor = "let user of users">
-			<td >{{user.id}}</td>
+			<td>{{user.id}}</td>
 			<td>{{user.login}}</td>
 			<td>{{user.firstName}}</td>
 			<td>{{user.lastName}}</td>

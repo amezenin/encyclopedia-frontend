@@ -1,22 +1,22 @@
 <div class="col-md-6 offset-md-3">
-	<h3>Update User</h3>
+	<h3 i18n>Update User</h3>
 	<form [formGroup]="userUpdateForm" (ngSubmit) = "onSubmit()">
 		<div class="form-group">
-			<label for="exampleFormControlSelect1">Active status</label>
+			<label for="exampleFormControlSelect1" i18n>Active status</label>
 			<select class="form-control" id="exampleFormControlSelect1" formControlName="active">
-				<option value="true">true</option>
-				<option value="false">false</option>
+				<option value="true" i18n>true</option>
+				<option value="false" i18n>false</option>
 			</select>
-			<span *ngIf="userUpdateForm.get('active')?.touched && userUpdateForm.get('active')?.hasError('required')">Enter status</span>
+			<span *ngIf="userUpdateForm.get('active')?.touched && userUpdateForm.get('active')?.hasError('required')" i18n>Enter status</span>
 		</div>
 		<div class="form-group">
-			<label for="exampleFormControlSelect2">Roles</label>
+			<label for="exampleFormControlSelect2" i18n>Roles</label>
 			<select multiple class="form-control" id="exampleFormControlSelect2" formControlName="roles">
 				<option *ngFor="let role of rolesList" [value]="role">{{role.name}}</option>
 			</select>
-			<span *ngIf="userUpdateForm.get('role')?.touched && userUpdateForm.get('role')?.hasError('required')">Enter role</span>
+			<span *ngIf="userUpdateForm.get('role')?.touched && userUpdateForm.get('role')?.hasError('required')" i18n>Enter role</span>
 		</div>
-		<button type="submit" class="btn btn-primary" [disabled]="!userUpdateForm.valid">Submit</button>
+		<button type="submit" class="btn btn-primary" [disabled]="!userUpdateForm.valid" i18n>Submit</button>
 	</form>
 	{{this.userUpdateForm.value | json}}
 </div>
