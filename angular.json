@@ -19,8 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": ["ru"],
-            "outputPath": "dist/encyclopedia-frontend",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,6 +35,9 @@
             "scripts": []
           },
           "configurations": {
+            "ru": {
+              "localize": ["ru"]
+            },
             "production": {
               "budgets": [
                 {
@@ -73,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "encyclopedia-frontend:build:production"
+            },
+            "ru": {
+              "browserTarget": "encyclopedia-frontend:build:ru"
             },
             "development": {
               "browserTarget": "encyclopedia-frontend:build:development"

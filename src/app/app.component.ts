@@ -16,6 +16,11 @@ export class AppComponent {
   login?: string;
   title = $localize `Encyclopedia Angular + Spring Boot`;
 
+  localeList: any = [
+    {code: 'en-US', label: 'English'},
+    {code: 'ru', label: 'Русский'}
+  ]
+
   constructor(public tokenStorageService: TokenStorageService,
     public router: Router) { }
     ngOnInit(): void {

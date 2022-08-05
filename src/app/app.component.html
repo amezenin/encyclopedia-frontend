@@ -30,6 +30,11 @@
 				<a href class="nav-link" (click)="logout()" i18n>LogOut</a>
 			</li>
 		</ul>
+		<ul class="navbar-nav" >
+			<li *ngFor="let locale of localeList"class="nav-item">
+				<a href="/{{locale.code}}/" class="nav-link">{{ locale.label }}</a>
+			</li>
+		</ul>
 	</nav>
 	<div class="container">
 		<router-outlet></router-outlet>
